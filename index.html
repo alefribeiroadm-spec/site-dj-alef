@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DJ Alef — Trap, Funk, Rap, House & Clássicos</title>
+<meta name="description" content="DJ Alef — sets autorais entre trap, funk, rap, boombap e house. Residente do Resenha de Domingo (Vista Dourada, Cariacica). Shows, bares e eventos privados na Grande Vitória.">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg-alt: #141414;
+    --fg: #f5f5f5;
+    --muted: #999;
+    --gold: #c9a227;
+    --red: #b3271e;
+    --border: #2a2a2a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+  }
+  a { color: var(--gold); text-decoration: none; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  header.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    background:
+      linear-gradient(0deg, rgba(10,10,10,1) 0%, rgba(10,10,10,0.55) 45%, rgba(10,10,10,0.35) 100%),
+      url('assets/img/foto2.jpg');
+    background-size: cover;
+    background-position: center 20%;
+  }
+  header.hero .wrap { padding-bottom: 70px; max-width: 1080px; }
+  header.hero .kicker {
+    color: var(--gold);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 18px;
+  }
+  header.hero h1 {
+    font-size: clamp(3rem, 11vw, 6.5rem);
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    line-height: 0.95;
+  }
+  header.hero .sub {
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: 1.05rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    max-width: 520px;
+  }
+  header.hero .cta {
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+  }
+  .btn:hover { background: var(--gold); color: #000; }
+  .btn.solid { background: var(--gold); color: #000; }
+  .btn.solid:hover { background: transparent; color: var(--gold); }
+
+  section { padding: 90px 0; border-bottom: 1px solid var(--border); }
+  section.alt { background: var(--bg-alt); }
+  .eyebrow {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.8rem;
+    margin-bottom: 14px;
+  }
+  h2 {
+    font-size: 2.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+    max-width: 700px;
+  }
+  h2 span { color: var(--gold); }
+  .lede { color: var(--muted); max-width: 640px; margin-bottom: 48px; }
+
+  .genres { display: flex; flex-wrap: wrap; gap: 12px; }
+  .genres span {
+    border: 1px solid var(--border);
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .grid3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+  }
+  .card {
+    border: 1px solid var(--border);
+    padding: 32px 24px;
+    background: var(--bg);
+  }
+  .card h3 { text-transform: uppercase; letter-spacing: 0.05em; font-size: 1.1rem; margin-bottom: 6px; }
+  .card .price { font-size: 2rem; font-weight: 800; color: var(--gold); margin: 12px 0; }
+  .card .price small { font-size: 0.9rem; color: var(--muted); font-weight: 400; }
+  .card ul { list-style: none; color: var(--muted); font-size: 0.9rem; }
+  .card ul li { padding: 4px 0; }
+
+  footer {
+    padding: 60px 0;
+    text-align: center;
+    color: var(--muted);
+  }
+  footer .contacts {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin: 24px 0;
+    flex-wrap: wrap;
+  }
+  footer .contacts a { font-size: 1rem; }
+  footer small { display: block; margin-top: 30px; color: #555; }
+
+  .mosaic {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 190px;
+    grid-auto-flow: dense;
+    gap: 10px;
+  }
+  .mosaic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .mosaic .big { grid-column: span 2; grid-row: span 2; }
+  .mosaic .wide { grid-column: span 2; }
+  @media (max-width: 640px) {
+    .mosaic { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
+    .mosaic .big { grid-column: span 2; grid-row: span 2; }
+    .mosaic .wide { grid-column: span 2; }
+  }
+
+  .social-links { display: flex; gap: 16px; flex-wrap: wrap; }
+  .social-links a {
+    border: 1px solid var(--gold);
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+  }
+  .social-links a:hover { background: var(--gold); color: #000; }
+
+  .event-banner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    border: 1px solid var(--border);
+    padding: 32px;
+    margin-bottom: 40px;
+  }
+  .event-banner .info { flex: 1; min-width: 240px; }
+  .event-banner .info h3 { font-size: 1.4rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+  .event-banner .info h3 span { color: var(--gold); }
+  .event-banner .info .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 4px; }
+  .event-banner .info .meta strong { color: var(--fg); }
+
+  .cta-note { color: var(--muted); font-size: 0.8rem; margin-top: 14px; }
+
+  .card { display: flex; flex-direction: column; }
+  .card .btn { margin-top: auto; text-align: center; }
+
+  .bg-section {
+    background:
+      linear-gradient(0deg, rgba(20,20,20,0.96) 0%, rgba(20,20,20,0.90) 100%),
+      url('assets/img/foto5.jpg');
+    background-size: cover;
+    background-position: center 25%;
+  }
+
+  footer .whatsapp-cta { margin-bottom: 34px; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Grande Vitória / ES</div>
+    <h1>DJ Alef</h1>
+    <div class="sub">Trap · Funk · Rap · Boombap · House · Underground</div>
+    <div class="cta">
+      <a href="https://wa.me/5527997656489?text=Oi%20Alef!%20Vim%20pelo%20site%20e%20quero%20fechar%20uma%20data%20pra%20um%20show." target="_blank" rel="noopener" class="btn solid">Contratar no WhatsApp</a>
+      <a href="#fotos" class="btn">Ver fotos</a>
+    </div>
+    <div class="cta-note">Resposta rápida — clique e já cai numa mensagem pronta.</div>
+  </div>
+</header>
+
+<section id="sobre">
+  <div class="wrap">
+    <div class="eyebrow">Sobre</div>
+    <h2>O <span>Som</span></h2>
+    <p class="lede">
+      DJ Alef é um artista capixaba (ES), DJ e produtor, envolvido com música desde os 13 anos. Identidade versátil,
+      transitando entre funk brasileiro, funk capixaba, rap, trap, house, pagodão, samba, arrocha e clássicos, sempre
+      com leitura de público.
+    </p>
+    <p class="lede" style="font-style: italic;">
+      "Não importa o ritmo, o tamanho da festa ou o perfil do público. A missão é sempre a mesma: sentir a pista,
+      conduzir a energia e transformar música em experiência."
+    </p>
+    <div class="genres">
+      <span>Trap</span>
+      <span>Funk</span>
+      <span>Funk Capixaba</span>
+      <span>Rap / Boombap</span>
+      <span>House</span>
+      <span>Pagodão</span>
+      <span>Samba / Arrocha</span>
+      <span>Clássicos</span>
+    </div>
+  </div>
+</section>
+
+<section id="fotos">
+  <div class="wrap">
+    <div class="eyebrow">Registro</div>
+    <h2><span>Fotos</span> &amp; Sets</h2>
+    <p class="lede">Registros de pista e produção.</p>
+    <div class="mosaic">
+      <img class="big" src="assets/img/foto1.jpg" alt="DJ Alef em set">
+      <img src="assets/img/foto5.jpg" alt="DJ Alef em set">
+      <img src="assets/img/foto6.jpg" alt="DJ Alef em set">
+      <img class="wide" src="assets/img/foto3.jpg" alt="DJ Alef em set">
+      <img src="assets/img/foto7.jpg" alt="DJ Alef em set">
+      <img class="wide" src="assets/img/foto4.jpg" alt="DJ Alef em set">
+      <img src="assets/img/retrato8.jpg" alt="DJ Alef">
+      <img src="assets/img/retrato9.jpg" alt="DJ Alef">
+      <img src="assets/img/retrato10.jpg" alt="DJ Alef">
+    </div>
+    <p class="lede" style="margin-top: 40px; margin-bottom: 0;">Cortes de set e sessões completas saem primeiro no Instagram e TikTok:</p>
+    <div class="social-links" style="margin-top: 16px;">
+      <a href="https://www.instagram.com/alef.beat/" target="_blank" rel="noopener">Ver no Instagram</a>
+      <a href="https://www.tiktok.com/@alef.beat" target="_blank" rel="noopener">Ver no TikTok</a>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="eventos">
+  <div class="wrap">
+    <div class="eyebrow">Onde tocar comigo</div>
+    <h2>Onde já <span>toquei</span></h2>
+
+    <div class="event-banner">
+      <div class="info">
+        <h3>Resenha D+ <span>— Resenha de Domingo</span></h3>
+        <div class="meta"><strong>Há 1 ano</strong> como DJ residente</div>
+        <div class="meta"><strong>Vista Dourada</strong>, Cariacica — ES</div>
+        <div class="meta">Socyte Evolution — domingos</div>
+      </div>
+      <div class="social-links">
+        <a href="https://www.instagram.com/alef.beat/" target="_blank" rel="noopener">Próxima edição no Instagram</a>
+      </div>
+    </div>
+
+    <div class="mosaic">
+      <img class="big" src="assets/img/flyer-26jul.jpg" alt="Flyer Resenha D+ 26 de julho">
+      <img src="assets/img/flyer-12jul.jpg" alt="Flyer Resenha D+ 12 de julho">
+      <img src="assets/img/flyer-28jun.jpg" alt="Flyer Resenha D+ 28 de junho">
+      <img src="assets/img/pov1.jpg" alt="Visão da cabine antes do show">
+      <img src="assets/img/pov2.jpg" alt="Cabine do DJ Alef, formatura da Júlia">
+      <img src="assets/img/pov3.jpg" alt="Preparação do palco, Evolution Sport Center">
+      <img src="assets/img/pov4.jpg" alt="Software de DJ em uso no palco">
+      <img src="assets/img/retrato11.jpg" alt="DJ Alef no Resenha de Domingo">
+    </div>
+  </div>
+</section>
+
+<section id="precos" class="bg-section">
+  <div class="wrap">
+    <div class="eyebrow">Contratação</div>
+    <h2>Shows &amp; <span>Valores</span></h2>
+    <p class="lede">Pacotes pensados pra bares, festas e eventos privados na Grande Vitória. Data confirmada na hora, direto pelo WhatsApp.</p>
+    <div class="grid3">
+      <div class="card">
+        <h3>Show Compacto</h3>
+        <div class="price">R$ 250<small>/ com som</small></div>
+        <div class="price" style="font-size:1.2rem; color:var(--muted);">R$ 150<small> / sem som</small></div>
+        <ul>
+          <li>2h30 – 3h de set</li>
+          <li>Ideal pra bares e festas pequenas</li>
+        </ul>
+        <a href="https://wa.me/5527997656489?text=Oi%20Alef!%20Quero%20fechar%20o%20Show%20Compacto%20que%20vi%20no%20seu%20site." target="_blank" rel="noopener" class="btn">Quero esse</a>
+      </div>
+      <div class="card">
+        <h3>Show Completo</h3>
+        <div class="price">R$ 300<small>/ com som</small></div>
+        <div class="price" style="font-size:1.2rem; color:var(--muted);">R$ 200<small> / sem som</small></div>
+        <ul>
+          <li>4h de set</li>
+          <li>Festas médias e eventos privados</li>
+        </ul>
+        <a href="https://wa.me/5527997656489?text=Oi%20Alef!%20Quero%20fechar%20o%20Show%20Completo%20que%20vi%20no%20seu%20site." target="_blank" rel="noopener" class="btn">Quero esse</a>
+      </div>
+      <div class="card">
+        <h3>Pacote Mensal</h3>
+        <div class="price">R$ 800<small>/ mês</small></div>
+        <ul>
+          <li>4 shows fixos por mês</li>
+          <li>Fidelização com desconto</li>
+          <li>Ideal pra bar com casa fixa</li>
+        </ul>
+        <a href="https://wa.me/5527997656489?text=Oi%20Alef!%20Quero%20saber%20mais%20sobre%20o%20Pacote%20Mensal%20do%20seu%20site." target="_blank" rel="noopener" class="btn">Quero esse</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contato">
+  <div class="wrap">
+    <h2 style="text-align:center; margin: 0 auto 10px;">Vamos <span>fechar</span> uma data?</h2>
+    <p class="lede" style="margin: 0 auto 30px; text-align:center;">Manda uma mensagem — a resposta costuma ser rápida.</p>
+    <div class="whatsapp-cta" style="text-align:center;">
+      <a href="https://wa.me/5527997656489?text=Oi%20Alef!%20Vim%20pelo%20site%20e%20quero%20fechar%20uma%20data%20pra%20um%20show." target="_blank" rel="noopener" class="btn solid">Chamar no WhatsApp agora</a>
+    </div>
+    <div class="contacts">
+      <a href="https://www.instagram.com/alef.beat/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@alef.beat" target="_blank" rel="noopener">TikTok</a>
+      <a href="mailto:alefribeiroadm@gmail.com">E-mail</a>
+    </div>
+    <small>
+      © DJ Alef — site estático, hospedagem gratuita.
+    </small>
+  </div>
+</footer>
+
+</body>
+</html>
