@@ -201,6 +201,36 @@
   }
 
   footer .whatsapp-cta { margin-bottom: 34px; }
+
+  .video-block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    align-items: center;
+    border: 1px solid var(--border);
+    padding: 24px;
+    margin-top: 40px;
+  }
+  .video-block video {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    background: #000;
+    display: block;
+  }
+  .video-block .video-note { flex: 1; min-width: 240px; }
+  .video-block .video-note h3 {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  .video-block .video-note p { color: var(--muted); }
+  @media (max-width: 640px) {
+    .video-block { justify-content: center; padding: 16px; }
+    .video-block video { max-width: 100%; }
+  }
 </style>
 </head>
 <body>
@@ -250,20 +280,30 @@
     <h2><span>Fotos</span> &amp; Sets</h2>
     <p class="lede">Registros de pista e produção.</p>
     <div class="mosaic">
-      <img class="big" src="assets/img/foto1.jpg" alt="DJ Alef em set">
-      <img src="assets/img/foto5.jpg" alt="DJ Alef em set">
-      <img src="assets/img/foto6.jpg" alt="DJ Alef em set">
-      <img class="wide" src="assets/img/foto3.jpg" alt="DJ Alef em set">
-      <img src="assets/img/foto7.jpg" alt="DJ Alef em set">
-      <img class="wide" src="assets/img/foto4.jpg" alt="DJ Alef em set">
-      <img src="assets/img/retrato8.jpg" alt="DJ Alef">
-      <img src="assets/img/retrato9.jpg" alt="DJ Alef">
-      <img src="assets/img/retrato10.jpg" alt="DJ Alef">
+      <img class="big" src="assets/img/foto1.jpg" alt="DJ Alef em sessão de estúdio" loading="lazy">
+      <img src="assets/img/foto5.jpg" alt="DJ Alef tocando ao vivo" loading="lazy">
+      <img src="assets/img/retrato10.jpg" alt="Retrato de DJ Alef" loading="lazy">
+      <img class="wide" src="assets/img/foto3.jpg" alt="DJ Alef em sessão de estúdio" loading="lazy">
+      <img class="wide" src="assets/img/foto4.jpg" alt="DJ Alef em sessão de estúdio" loading="lazy">
+      <img src="assets/img/foto6.jpg" alt="DJ Alef tocando ao vivo" loading="lazy">
+      <img src="assets/img/retrato9.jpg" alt="Retrato de DJ Alef" loading="lazy">
     </div>
-    <p class="lede" style="margin-top: 40px; margin-bottom: 0;">Cortes de set e sessões completas saem primeiro no Instagram e TikTok:</p>
+    <div class="video-block">
+      <video src="assets/video/set.mp4" poster="assets/img/set-poster.jpg"
+             controls playsinline preload="none"
+             aria-label="Corte de set do DJ Alef"></video>
+      <div class="video-note">
+        <h3>Corte de set</h3>
+        <p>Um pedaço de como a pista responde ao vivo. Sessões completas no YouTube e no Spotify.</p>
+      </div>
+    </div>
+
+    <p class="lede" style="margin-top: 40px; margin-bottom: 0;">Onde ouvir e acompanhar:</p>
     <div class="social-links" style="margin-top: 16px;">
-      <a href="https://www.instagram.com/alef.beat/" target="_blank" rel="noopener">Ver no Instagram</a>
-      <a href="https://www.tiktok.com/@alef.beat" target="_blank" rel="noopener">Ver no TikTok</a>
+      <a href="https://open.spotify.com/artist/6inR3vp2vxfXVcMWFxcBJN" target="_blank" rel="noopener">Spotify</a>
+      <a href="https://www.youtube.com/@alefbeats95" target="_blank" rel="noopener">YouTube — sets completos</a>
+      <a href="https://www.instagram.com/alef.beat/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@alef.beat" target="_blank" rel="noopener">TikTok</a>
     </div>
   </div>
 </section>
@@ -286,14 +326,15 @@
     </div>
 
     <div class="mosaic">
-      <img class="big" src="assets/img/flyer-26jul.jpg" alt="Flyer Resenha D+ 26 de julho">
-      <img src="assets/img/flyer-12jul.jpg" alt="Flyer Resenha D+ 12 de julho">
-      <img src="assets/img/flyer-28jun.jpg" alt="Flyer Resenha D+ 28 de junho">
-      <img src="assets/img/pov1.jpg" alt="Visão da cabine antes do show">
-      <img src="assets/img/pov2.jpg" alt="Cabine do DJ Alef, formatura da Júlia">
-      <img src="assets/img/pov3.jpg" alt="Preparação do palco, Evolution Sport Center">
-      <img src="assets/img/pov4.jpg" alt="Software de DJ em uso no palco">
-      <img src="assets/img/retrato11.jpg" alt="DJ Alef no Resenha de Domingo">
+      <img class="big" src="assets/img/flyer-sitio-23ago.jpg" alt="Flyer — DJ Alef no Sítio Recanto do Vovô, 23 de agosto" loading="lazy">
+      <img src="assets/img/flyer-pagodao-05set.jpg" alt="Flyer Pagodão do Resenha, 5 de setembro" loading="lazy">
+      <img src="assets/img/flyer-pagodao-22ago.jpg" alt="Flyer Pagodão do Resenha, 22 de agosto" loading="lazy">
+      <img src="assets/img/flyer-26jul.jpg" alt="Flyer Resenha D+ 26 de julho" loading="lazy">
+      <img src="assets/img/flyer-12jul.jpg" alt="Flyer Resenha D+ 12 de julho" loading="lazy">
+      <img src="assets/img/pov1.jpg" alt="Visão da cabine antes do show" loading="lazy">
+      <img src="assets/img/pov2.jpg" alt="Cabine do DJ Alef, formatura da Júlia" loading="lazy">
+      <img src="assets/img/pov3.jpg" alt="Preparação do palco, Evolution Sport Center" loading="lazy">
+      <img src="assets/img/retrato11.jpg" alt="DJ Alef no Resenha de Domingo" loading="lazy">
     </div>
   </div>
 </section>
@@ -302,37 +343,37 @@
   <div class="wrap">
     <div class="eyebrow">Contratação</div>
     <h2>Shows &amp; <span>Valores</span></h2>
-    <p class="lede">Pacotes pensados pra bares, festas e eventos privados na Grande Vitória. Data confirmada na hora, direto pelo WhatsApp.</p>
+    <p class="lede">Valores pra bares, festas e eventos privados na Grande Vitória. Data confirmada na hora, direto pelo WhatsApp.</p>
     <div class="grid3">
       <div class="card">
-        <h3>Show Compacto</h3>
-        <div class="price">R$ 250<small>/ com som</small></div>
-        <div class="price" style="font-size:1.2rem; color:var(--muted);">R$ 150<small> / sem som</small></div>
+        <h3>Show</h3>
+        <div class="price">R$ 200</div>
         <ul>
-          <li>2h30 – 3h de set</li>
+          <li>Até 3h de set</li>
+          <li>Som por conta do contratante</li>
           <li>Ideal pra bares e festas pequenas</li>
         </ul>
-        <a href="https://wa.me/5527997656489?text=Oi%20Alef!%20Quero%20fechar%20o%20Show%20Compacto%20que%20vi%20no%20seu%20site." target="_blank" rel="noopener" class="btn">Quero esse</a>
+        <a href="https://wa.me/5527997656489?text=Oi%20Alef!%20Quero%20fechar%20um%20show%20de%20R%24%20200%20que%20vi%20no%20seu%20site." target="_blank" rel="noopener" class="btn">Quero esse</a>
       </div>
       <div class="card">
-        <h3>Show Completo</h3>
-        <div class="price">R$ 300<small>/ com som</small></div>
-        <div class="price" style="font-size:1.2rem; color:var(--muted);">R$ 200<small> / sem som</small></div>
+        <h3>Show 4 horas</h3>
+        <div class="price">R$ 300</div>
         <ul>
           <li>4h de set</li>
+          <li>Som por conta do contratante</li>
           <li>Festas médias e eventos privados</li>
         </ul>
-        <a href="https://wa.me/5527997656489?text=Oi%20Alef!%20Quero%20fechar%20o%20Show%20Completo%20que%20vi%20no%20seu%20site." target="_blank" rel="noopener" class="btn">Quero esse</a>
+        <a href="https://wa.me/5527997656489?text=Oi%20Alef!%20Quero%20fechar%20o%20show%20de%204%20horas%20%28R%24%20300%29%20que%20vi%20no%20seu%20site." target="_blank" rel="noopener" class="btn">Quero esse</a>
       </div>
       <div class="card">
-        <h3>Pacote Mensal</h3>
-        <div class="price">R$ 800<small>/ mês</small></div>
+        <h3>Show com som</h3>
+        <div class="price">R$ 500</div>
         <ul>
-          <li>4 shows fixos por mês</li>
-          <li>Fidelização com desconto</li>
-          <li>Ideal pra bar com casa fixa</li>
+          <li>Set + estrutura de som inclusa</li>
+          <li>Você não precisa alugar nada</li>
+          <li>Ideal pra quem não tem equipamento</li>
         </ul>
-        <a href="https://wa.me/5527997656489?text=Oi%20Alef!%20Quero%20saber%20mais%20sobre%20o%20Pacote%20Mensal%20do%20seu%20site." target="_blank" rel="noopener" class="btn">Quero esse</a>
+        <a href="https://wa.me/5527997656489?text=Oi%20Alef!%20Quero%20fechar%20o%20show%20com%20som%20%28R%24%20500%29%20que%20vi%20no%20seu%20site." target="_blank" rel="noopener" class="btn">Quero esse</a>
       </div>
     </div>
   </div>
@@ -346,6 +387,8 @@
       <a href="https://wa.me/5527997656489?text=Oi%20Alef!%20Vim%20pelo%20site%20e%20quero%20fechar%20uma%20data%20pra%20um%20show." target="_blank" rel="noopener" class="btn solid">Chamar no WhatsApp agora</a>
     </div>
     <div class="contacts">
+      <a href="https://open.spotify.com/artist/6inR3vp2vxfXVcMWFxcBJN" target="_blank" rel="noopener">Spotify</a>
+      <a href="https://www.youtube.com/@alefbeats95" target="_blank" rel="noopener">YouTube</a>
       <a href="https://www.instagram.com/alef.beat/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.tiktok.com/@alef.beat" target="_blank" rel="noopener">TikTok</a>
       <a href="mailto:alefribeiroadm@gmail.com">E-mail</a>
